@@ -1,6 +1,9 @@
-# Workbench Theme for Oh My ZSH
+# Workbench ⚒ Theme for Oh My ZSH
 
-A personal Oh My ZSH theme with Git status. 
+A personal Oh My ZSH theme with Git status.
+
+## Preview
+![Preview Workbench Theme](https://raw.githubusercontent.com/u8lvavhel/workbench-theme/master/workbench-theme.jpg)
 
 ## Installation
 
@@ -10,4 +13,16 @@ A personal Oh My ZSH theme with Git status.
 
 3. Reload ZSH
 
-####
+## Git legend
+
+####Informations
+* **±** : dirty working directory
+* **✔** : clean working directory
+
+####Status
+* **✚** : added file(s)
+* **✖** : deleted file(s)
+* **✸** : modified file(s)
+* **✻** : untracked file(s)
+* **➜** : renamed file(s)
+* **⤔** : unmerged file(s)

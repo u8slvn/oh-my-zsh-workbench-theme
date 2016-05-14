@@ -20,38 +20,38 @@ function get_pwd() {
 
 # add a line break
 function end_line() {
-	echo ""
+    echo ""
 }
 
 # check the prompt status
 function prompt_status() {
-	if [ $RETURN -ne 0 ]; then
-		echo -ne "%{$FG[160]%}✘ "
-	fi
-	if [ $(jobs -l | wc -l) -gt 0 ]; then
-		echo -ne "%{$FG[105]%}⚙ "
-	fi
+    if [ $RETURN -ne 0 ]; then
+        echo -ne "%{$FG[160]%}✘ "
+    fi
+    if [ $(jobs -l | wc -l) -gt 0 ]; then
+        echo -ne "%{$FG[105]%}⚙ "
+    fi
 }
 
 # display git informations
 function git_prompt() {
-	echo -ne "$(git_prompt_info) %{$FG[192]%}$(git_prompt_status)%{$reset_color%}"
+    echo -ne "$(git_prompt_info) %{$FG[192]%}$(git_prompt_status)%{$reset_color%}"
 }
 
 # input line
 function prompt_input() {
-	echo -ne "%{$FG[154]%}▷%{$reset_color%} "
+    echo -ne "%{$FG[154]%}▷%{$reset_color%} "
 }
 
 # prompt builder
 function display_prompt() {
-	RETURN=$?
-	end_line
-	get_pwd
-	git_prompt
-	end_line
-	prompt_status
-	prompt_input
+    RETURN=$?
+    end_line
+    get_pwd
+    git_prompt
+    end_line
+    prompt_status
+    prompt_input
 }
 
 PROMPT='$(display_prompt)'
