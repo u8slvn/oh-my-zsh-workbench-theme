@@ -1,3 +1,5 @@
+# prompt builder function inspired from the agnoster theme
+
 # zsh git info theme
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$FG[197]%}⎇ %{$FG[123]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
