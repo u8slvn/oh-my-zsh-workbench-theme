@@ -1,15 +1,16 @@
-# prompt builder function inspired from the agnoster theme
+# prompt builder function ans status function inspired from the agnoster theme
 
 # check if workbench theme custom vars are defined
-if [ -z $OMZSH_WORKBENCH_PROMOPT_INLINE ]; then $OMZSH_WORKBENCH_PROMOPT_INLINE="false"; fi
-if [ -z $OMZSH_WORKBENCH_PROMPT_STATUS ]; then $OMZSH_WORKBENCH_PROMPT_STATUS="true"; fi
-if [ -z $OMZSH_WORKBENCH_SHORT_PWD ]; then $OMZSH_WORKBENCH_SHORT_PWD="false"; fi
+if [ -z $OMZSH_WORKBENCH_PROMPT_INLINE ]; then OMZSH_WORKBENCH_PROMPT_INLINE="false"; fi
+if [ -z $OMZSH_WORKBENCH_PROMPT_STATUS ]; then OMZSH_WORKBENCH_PROMPT_STATUS="true"; fi
+if [ -z $OMZSH_WORKBENCH_SHORT_PWD ]; then OMZSH_WORKBENCH_SHORT_PWD="false"; fi
 
 # zsh git info theme
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$FG[197]%}⎇ %{$FG[123]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$FG[214]%}±"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$FG[154]%}✔"
+
 # zsh git status theme
 ZSH_THEME_GIT_PROMPT_ADDED="✚ "
 ZSH_THEME_GIT_PROMPT_DELETED="✖ "
@@ -20,13 +21,13 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="⤔ "
 
 # working directory
 function get_pwd() {
-    [[ $OMZSH_WORKBENCH_SHORT_PWD == "true" ]] && workbench_pwd="${PWD##*/}" || workbench_pwd="${PWD/$HOME/~}"
+    [[ $OMZSH_WORKBENCH_SHORT_PWD = "true" ]] && workbench_pwd="${PWD##*/}" || workbench_pwd="${PWD/$HOME/~}"
     echo -ne "⚒ %{$FG[033]%}$workbench_pwd%{$reset_color%}"
 }
 
 # add a line break
 function end_line() {
-    if [ $OMZSH_WORKBENCH_PROMOPT_INLINE = "false" ]; then
+    if [ $OMZSH_WORKBENCH_PROMPT_INLINE = "false" ]; then
         echo ""
     fi
 }
