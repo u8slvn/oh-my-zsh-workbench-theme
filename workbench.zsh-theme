@@ -1,9 +1,10 @@
-# prompt builder function ans status function inspired from the agnoster theme
-
-# check if workbench theme custom vars are defined
+# check defined theme custom vars
 if [ -z $OMZSH_WORKBENCH_PROMPT_INLINE ]; then OMZSH_WORKBENCH_PROMPT_INLINE="false"; fi
 if [ -z $OMZSH_WORKBENCH_PROMPT_STATUS ]; then OMZSH_WORKBENCH_PROMPT_STATUS="true"; fi
 if [ -z $OMZSH_WORKBENCH_SHORT_PWD ]; then OMZSH_WORKBENCH_SHORT_PWD="false"; fi
+
+# disable default virtualenv display
+VIRTUAL_ENV_DISABLE_PROMPT="false"
 
 # zsh git info theme
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$FG[197]%}⎇ %{$FG[123]%}"
@@ -22,7 +23,14 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="⤔ "
 # working directory
 function get_pwd() {
     [[ $OMZSH_WORKBENCH_SHORT_PWD = "true" ]] && workbench_pwd="${PWD##*/}" || workbench_pwd="${PWD/$HOME/~}"
-    echo -ne "⚒ %{$FG[033]%}$workbench_pwd%{$reset_color%}"
+    echo -ne "⚒ %{$FG[031]%}$workbench_pwd%{$reset_color%}"
+}
+
+# virtualenv
+function get_virtualenv() {
+  if [[ $VIRTUAL_ENV ]]; then
+    echo -ne "%{$FG[177]%}[$(basename $VIRTUAL_ENV)]%{$reset_color%} "
+  fi
 }
 
 # add a line break
@@ -32,7 +40,7 @@ function end_line() {
     fi
 }
 
-# check the prompt status
+# check prompt status
 function prompt_status() {
     if [ $RETURN -ne 0 ]; then
         echo -ne "%{$FG[160]%}✘ "
@@ -56,6 +64,7 @@ function prompt_input() {
 function display_prompt() {
     RETURN=$?
     end_line
+    get_virtualenv
     get_pwd
     git_prompt
     end_line

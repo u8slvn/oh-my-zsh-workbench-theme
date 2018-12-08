@@ -1,6 +1,6 @@
-# Workbench ⚒ Theme for Oh My ZSH
+# Workbench ⚒ Personnal theme for Oh My ZSH
 
-A personal Oh My ZSH theme with Git status.
+A personal Oh My ZSH theme.
 
 ## Preview
 ![Short prompt](https://docs.google.com/uc?id=0B30nOrEpfS9zR3BndmtQUUtuS00)
@@ -9,9 +9,13 @@ A personal Oh My ZSH theme with Git status.
 
 1. Download the `workbench.zsh-theme` into `~/.oh-my-zsh/themes`
 
+`cd ~/.oh-my-zsh/themes && curl -O https://raw.githubusercontent.com/u8slvn/workbench-oh-my-zsh-theme/master/workbench.zsh-theme`
+
 2. Open your `.zshrc` file and set `ZSH_THEME` to `workbench`
 
 3. Reload ZSH
+
+`source ~/.zshrc`
 
 4. Watch for [customization options](#customization)
 
@@ -22,12 +26,12 @@ A personal Oh My ZSH theme with Git status.
 
 ## Git legend
 
-####Informations
+#### Informations
 
 * **±** : dirty working directory
 * **✔** : clean working directory
 
-####Status
+#### Status
 * **✚** : added file(s)
 * **✖** : deleted file(s)
 * **✸** : modified file(s)
@@ -37,7 +41,7 @@ A personal Oh My ZSH theme with Git status.
 
 ## Customization
 
-Workbench theme provides you some customization options.
+Workbench theme provides some customization options.
 
 #### Use
 
@@ -51,9 +55,9 @@ OMZSH_WORKBENCH_SHORT_PWD="false"
 
 #### Details
 
-* `OMZSH_WORKBENCH_PROMPT_INLINE` allow you to display the prompt line on one line
-* `OMZSH_WORKBENCH_PROMPT_STATUS` allow you to hide the prompt status part
-* `OMZSH_WORKBENCH_SHORT_PWD` allow you to display only the working directory in the path 
+* `OMZSH_WORKBENCH_PROMPT_INLINE`: display the prompt line on one line
+* `OMZSH_WORKBENCH_PROMPT_STATUS`: hide the prompt status part
+* `OMZSH_WORKBENCH_SHORT_PWD`: display only the working directory in the path 
 
 #### Customization example
 
