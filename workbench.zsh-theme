@@ -1,7 +1,7 @@
 # check defined theme custom vars
-if [ -z $OMZSH_WORKBENCH_PROMPT_INLINE ]; then OMZSH_WORKBENCH_PROMPT_INLINE="false"; fi
-if [ -z $OMZSH_WORKBENCH_PROMPT_STATUS ]; then OMZSH_WORKBENCH_PROMPT_STATUS="true"; fi
-if [ -z $OMZSH_WORKBENCH_SHORT_PWD ]; then OMZSH_WORKBENCH_SHORT_PWD="false"; fi
+[ -z $OMZSH_WORKBENCH_PROMPT_INLINE ] && OMZSH_WORKBENCH_PROMPT_INLINE="false"
+[ -z $OMZSH_WORKBENCH_PROMPT_STATUS ] && OMZSH_WORKBENCH_PROMPT_STATUS="true"
+[ -z $OMZSH_WORKBENCH_SHORT_PWD ] && OMZSH_WORKBENCH_SHORT_PWD="false"
 
 # disable default virtualenv display
 VIRTUAL_ENV_DISABLE_PROMPT="false"
@@ -28,7 +28,7 @@ function get_pwd() {
 
 # virtualenv
 function get_virtualenv() {
-  if [[ $VIRTUAL_ENV ]]; then
+  if [ -n $VIRTUAL_ENV ]; then
     echo -ne "%{$FG[177]%}[$(basename $VIRTUAL_ENV)]%{$reset_color%} "
   fi
 }
