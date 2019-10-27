@@ -1,7 +1,7 @@
 # check defined theme custom vars
-[ -z $OMZSH_WORKBENCH_PROMPT_INLINE ] && OMZSH_WORKBENCH_PROMPT_INLINE="false"
-[ -z $OMZSH_WORKBENCH_PROMPT_STATUS ] && OMZSH_WORKBENCH_PROMPT_STATUS="true"
-[ -z $OMZSH_WORKBENCH_SHORT_PWD ] && OMZSH_WORKBENCH_SHORT_PWD="false"
+[[ -z $OMZSH_WORKBENCH_PROMPT_INLINE ]] && OMZSH_WORKBENCH_PROMPT_INLINE="false"
+[[ -z $OMZSH_WORKBENCH_PROMPT_STATUS ]] && OMZSH_WORKBENCH_PROMPT_STATUS="true"
+[[ -z $OMZSH_WORKBENCH_SHORT_PWD ]] && OMZSH_WORKBENCH_SHORT_PWD="false"
 
 # disable default virtualenv display
 VIRTUAL_ENV_DISABLE_PROMPT="false"
@@ -28,24 +28,24 @@ function get_pwd() {
 
 # virtualenv
 function get_virtualenv() {
-  if [ -n $VIRTUAL_ENV ]; then
+  if [[ -n $VIRTUAL_ENV ]]; then
     echo -ne "%{$FG[177]%}[$(basename $VIRTUAL_ENV)]%{$reset_color%} "
   fi
 }
 
 # add a line break
 function end_line() {
-    if [ $OMZSH_WORKBENCH_PROMPT_INLINE = "false" ]; then
+    if [[ $OMZSH_WORKBENCH_PROMPT_INLINE = "false" ]]; then
         echo ""
     fi
 }
 
 # check prompt status
 function prompt_status() {
-    if [ $RETURN -ne 0 ]; then
+    if [[ $RETURN -ne 0 ]]; then
         echo -ne "%{$FG[160]%}✘ "
     fi
-    if [ $(jobs -l | wc -l) -gt 0 ]; then
+    if [[ $(jobs -l | wc -l) -gt 0 ]]; then
         echo -ne "%{$FG[105]%}⚙ "
     fi
 }
