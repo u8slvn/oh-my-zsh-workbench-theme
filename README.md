@@ -3,13 +3,17 @@
 A personal Oh My ZSH theme.
 
 ## Preview
+
 ![Short prompt](https://docs.google.com/uc?id=0B30nOrEpfS9zR3BndmtQUUtuS00)
 
 ## Installation
 
 1. Download the `workbench.zsh-theme` into `~/.oh-my-zsh/themes`
 
-`cd ~/.oh-my-zsh/themes && curl -O https://raw.githubusercontent.com/u8slvn/workbench-oh-my-zsh-theme/master/workbench.zsh-theme`
+```sh
+cd ~/.oh-my-zsh/themes
+curl -O https://raw.githubusercontent.com/u8slvn/workbench-oh-my-zsh-theme/master/workbench.zsh-theme`
+```
 
 2. Open your `.zshrc` file and set `ZSH_THEME` to `workbench`
 
