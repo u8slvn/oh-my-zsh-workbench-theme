@@ -4,22 +4,24 @@ A personal Oh My ZSH theme.
 
 ## Preview
 
-![Short prompt](https://docs.google.com/uc?id=0B30nOrEpfS9zR3BndmtQUUtuS00)
+![Short prompt](./images/workbench-theme.jpg)
 
 ## Installation
 
-1. Download the `workbench.zsh-theme` into `~/.oh-my-zsh/themes`
+1. Download `workbench.zsh-theme` into `~/.oh-my-zsh/themes`
 
-```sh
-cd ~/.oh-my-zsh/themes
-curl -O https://raw.githubusercontent.com/u8slvn/workbench-oh-my-zsh-theme/master/workbench.zsh-theme`
-```
+	```shell
+	$ cd ~/.oh-my-zsh/themes
+	$ curl -O https://raw.githubusercontent.com/u8slvn/workbench-oh-my-zsh-theme/master/workbench.zsh-theme
+	```
 
-2. Open your `.zshrc` file and set `ZSH_THEME` to `workbench`
+2. Open `.zshrc` file and set `ZSH_THEME` to `workbench`
 
 3. Reload ZSH
 
-`source ~/.zshrc`
+	```shell
+	$ source ~/.zshrc
+	```
 
 4. Watch for [customization options](#customization)
 
@@ -67,8 +69,8 @@ OMZSH_WORKBENCH_SHORT_PWD="false"
 
 1. `OMZSH_WORKBENCH_SHORT_PWD="true"`
 	
-	![Short prompt](https://docs.google.com/uc?id=0B30nOrEpfS9zeHhGVGFNQjNnT2c)
+	![Short prompt](./images/workbench-theme-short-prompt.jpg)
 
 2. `OMZSH_WORKBENCH_PROMPT_INLINE="true"`
 	
-	![Inline prompt](https://docs.google.com/uc?id=0B30nOrEpfS9zTWN4dGgzYUx3eDg)
+	![Inline prompt](./images/workbench-theme-inline-prompt.jpg)
